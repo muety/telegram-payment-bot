@@ -1,0 +1,14 @@
+{
+  "name": "telegram-payment-bot",
+  "version": "1.0.0",
+  "description": "Sample bot to explain payments with Telegram.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ferdinand Mütsch <mail@ferdinand-muetsch.de>",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^3.9.0"
+  }
+}
