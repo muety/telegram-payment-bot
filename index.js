@@ -1,8 +1,8 @@
 const Telegraf = require('telegraf')
 const { Markup } = Telegraf
 
-const app = new Telegraf('263649871:AAFZ3buvuL5FTAiUv0wtlYlaZWMqMSWO-Yo')
-const PAYMENT_TOKEN = '284685063:TEST:MzdiZGI4OGMwY2Jk'
+const app = new Telegraf('<YOUR_BOT_TOKEN_HERE>')
+const PAYMENT_TOKEN = '<YOUR_STRIPE_API_TOKEN_HERE>'
 
 const products = [
     {
