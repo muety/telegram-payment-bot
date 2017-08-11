@@ -6,7 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ferdinand Mütsch <mail@ferdinand-muetsch.de>",
+  "author": {
+    "name": "Ferdinand Mütsch",
+    "url": "https://ferdinand-muetsch.de"
+  },
+  "keywords": [
+    "chatbot",
+    "nodejs",
+    "telegram",
+    "payments",
+    "stripe"
+  ],
   "license": "MIT",
   "dependencies": {
     "telegraf": "^3.9.0"
