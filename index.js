@@ -50,7 +50,7 @@ What do you want?`,
 products.forEach(p => {
     app.hears(p.name, (ctx) => {
         console.log(`${ctx.from.first_name} is about to buy a ${p.name}.`);
-        replyWithInvoice(createInvoice(p))
+        ctx.replyWithInvoice(createInvoice(p))
     })
 })
 
