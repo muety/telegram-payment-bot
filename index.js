@@ -45,15 +45,15 @@ ${products.reduce((acc, p) => {
     return (acc += `*${p.name}* - ${p.price} €\n`)
     }, '')}    
 What do you want?`,
-Markup.keyboard(products.map(p => p.name)).oneTime().resize().extra()
+    Markup.keyboard(products.map(p => p.name)).oneTime().resize().extra()
 ))
 
 // Order product
 products.forEach(p => {
     app.hears(p.name, (ctx) => {
-        console.log(`${ctx.from.first_name} is about to buy a ${p.name}.`)
+        console.log(`${ctx.from.first_name} is about to buy a ${p.name}.`);
         ctx.replyWithInvoice(createInvoice(p))
-  })
+    })
 })
 
 // Handle payment callbacks
