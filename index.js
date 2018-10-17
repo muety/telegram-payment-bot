@@ -16,10 +16,10 @@ const products = [
         price: 3.99,
         description: 'The wasteland\'s most famous delicacy.',
         photoUrl: 'https://vignette2.wikia.nocookie.net/fallout/images/b/b9/Iguana_on_a_stick.png'
-    }
+  }
 ]
 
-function createInvoice(product) {
+function createInvoice (product) {
     return {
         provider_token: PAYMENT_TOKEN,
         start_parameter: 'foo',
@@ -41,7 +41,9 @@ app.command('start', ({ reply }) => reply('Welcome, nice to meet you! I can sell
 app.hears(/^what.*/i, ({ replyWithMarkdown }) => replyWithMarkdown(`
 You want to know what I have to offer? Sure!
 
-${products.reduce((acc, p) => acc += `*${p.name}* - ${p.price} €\n`, '')}    
+${products.reduce((acc, p) => {
+    return (acc += `*${p.name}* - ${p.price} €\n`)
+    }, '')}    
 What do you want?`,
     Markup.keyboard(products.map(p => p.name)).oneTime().resize().extra()
 ))
@@ -50,7 +52,7 @@ What do you want?`,
 products.forEach(p => {
     app.hears(p.name, (ctx) => {
         console.log(`${ctx.from.first_name} is about to buy a ${p.name}.`);
-        replyWithInvoice(createInvoice(p))
+        ctx.replyWithInvoice(createInvoice(p))
     })
 })
 
